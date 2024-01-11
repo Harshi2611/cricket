@@ -1,3 +1,9 @@
+let score = {
+  win: 0,
+  lost: 0,
+  tie: 0,
+
+};
 function generateRandom() {
   let compt;
   let randomno = Math.random() * 3;
@@ -15,34 +21,48 @@ function generateRandom() {
 function getresult(userMove, comptMove) {
   if (userMove === 'Bat') {
     if (comptMove === 'Ball') {
+      score.win++;
       return 'user won.';
     } else if (comptMove === 'Bat') {
+      score.tie++;
       return 'it is a tie';
     }
     else {
+      score.lost++;
       return 'compt won';
     }
   } else if (userMove === 'Ball') {
     if (comptMove === 'Ball') {
+      score.tie++;
       return 'it is a tie.';
     } else if (comptMove === 'Bat') {
+      score.lost++;
       return 'compt won';
     }
     else {
+      score.win++;
       return 'user won';
     }
   } else {
     if (comptMove === 'Ball') {
+      score.lost++;
       return 'comt won.';
     } else if (comptMove === 'Bat') {
+      score.win++;
       return 'user won';
     }
     else {
+      score.tie++;
       return 'it is tie';
     }
   }
 
 }
 function showresult(userMove, comptMove, result) {
-  alert(`You have chosen ${userMove}.  compt choice is ${comptMove} and  ${result}`);
+
+  alert(`You have chosen ${userMove}.  compt choice is ${comptMove} 
+  ${result}
+  Won:${score.win}, 
+  Lost:${score.lost}
+  Tie:${score.tie}`);
 }
