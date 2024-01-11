@@ -2,7 +2,11 @@ let score = {
   win: 0,
   lost: 0,
   tie: 0,
-
+  displayScore() {
+    return `Won:${score.win},
+    Lost:${score.lost},
+    Tie:${score.tie}`;
+  }
 };
 function generateRandom() {
   let compt;
@@ -62,7 +66,5 @@ function showresult(userMove, comptMove, result) {
 
   alert(`You have chosen ${userMove}.  compt choice is ${comptMove} 
   ${result}
-  Won:${score.win}, 
-  Lost:${score.lost}
-  Tie:${score.tie}`);
+  ${score.displayScore}`);
 }
