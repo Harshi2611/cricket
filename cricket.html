@@ -13,53 +13,29 @@
       <h1>Bat Ball Stump Game</h1>
       <button
         onclick="  
-       generateRandom();
+       let compt = generateRandom();
       
-      let resultMsg;
-      if(compt === 'Ball'){
-        resultMsg='user won.';
-      }else if(compt === 'Bat'){
-        resultMsg='it is a tie';
-      }
-      else{
-        resultMsg='compt won';
-      }
-      alert(`You have chosen Bat.  compt choice is ${compt} and  ${resultMsg}`);
+      let resultMsg=getresult('Bat', compt);
+      showresult('Bat', compt, resultMsg);
       "
       >
         Bat
       </button>
       <button
         onclick=" 
-      generateRandom();
-       
-       
-      if(compt === 'Ball'){
-        resultMsg = 'it is a tie.';
-      }else if(compt === 'Bat'){
-        resultMsg = 'compt won';
-      }
-      else{
-        resultMsg = 'user won';
-      }
-      alert(`You have chosen Ball.  compt choice is ${compt} and  ${resultMsg}`);
+      compt = generateRandom();
+     resultMsg=getresult('Ball', compt);
+     showresult('Ball', compt, resultMsg);
+      
       "
       >
         Ball
       </button>
       <button
         onclick="
-     generateRandom();
-      
-      if(compt === 'Ball'){
-        resultMsg='comt won.';
-      }else if(compt === 'Bat'){
-        resultMsg='user won';
-      }
-      else{
-        resultMsg='it is tie';
-      }
-      alert(`You have chosen Stump.  compt choice is ${compt} and  ${resultMsg}`);
+     compt = generateRandom();  
+     resultMsg=getresult('Stump', compt);
+     showresult('Stump', compt, resultMsg);
       "
       >
         Stump
