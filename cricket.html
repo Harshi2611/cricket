@@ -13,17 +13,7 @@
       <h1>Bat Ball Stump Game</h1>
       <button
         onclick="  
-      let randomno = Math.random() * 3;
-      let compt;
-      if(randomno>0 && randomno <=1){
-       compt = 'Bat';
-      }
-      else if(randomno>1 && randomno<=2){
-         compt='Ball';
-      }
-      else{
-         compt='Stump';
-      }
+       generateRandom();
       
       let resultMsg;
       if(compt === 'Ball'){
@@ -41,17 +31,7 @@
       </button>
       <button
         onclick=" 
-       randomno = Math.random() * 3;
-   
-      if(randomno>0 && randomno <=1){
-       compt = 'Bat';
-      }
-      else if(randomno>1 && randomno<=2){
-         compt='Ball';
-      }
-      else{
-         compt='Stump';
-      }
+      generateRandom();
        
        
       if(compt === 'Ball'){
@@ -69,18 +49,7 @@
       </button>
       <button
         onclick="
-      randomno = Math.random() * 3;
-     
-      if(randomno>0 && randomno <=1){
-       compt = 'Bat';
-      }
-      else if(randomno>1 && randomno<=2){
-         compt='Ball';
-      }
-      else{
-         compt='Stump';
-      }
-       
+     generateRandom();
       
       if(compt === 'Ball'){
         resultMsg='comt won.';
@@ -96,5 +65,6 @@
         Stump
       </button>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
