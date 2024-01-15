@@ -1,13 +1,21 @@
-let score = {
-  win: 0,
-  lost: 0,
-  tie: 0,
-  displayScore() {
-    return `Won:${score.win},
-    Lost:${score.lost},
-    Tie:${score.tie}`;
-  }
-};
+let scorestr = localStorage.getItem('score');
+let score;
+resetscore(scorestr);
+function resetscore(scorestr) {
+  score = scorestr ? JSON.parse(scorestr) : {
+    win: 0,
+    lost: 0,
+    tie: 0,
+  };
+
+  score.displayScore = function () {
+    return `Score: Won:${score.win}, Lost:${score.lost}, Tie:${score.tie}`;
+  };
+  showresult();
+}
+
+
+
 function generateRandom() {
   let compt;
   let randomno = Math.random() * 3;
@@ -63,8 +71,11 @@ function getresult(userMove, comptMove) {
 
 }
 function showresult(userMove, comptMove, result) {
+  localStorage.setItem('score', JSON.stringify(score));
 
-  alert(`You have chosen ${userMove}.  compt choice is ${comptMove} 
-  ${result}
-  ${score.displayScore}`);
+  document.querySelector('#user-move').innerText = userMove ? `You have chosen ${userMove}` : '';
+  document.querySelector('#computer-move').innerText = comptMove ? `compt choice is ${comptMove}` : '';
+  document.querySelector('#result').innerText = result || '';
+  document.querySelector('#score').innerText = score.displayScore();
+
 }

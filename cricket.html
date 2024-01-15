@@ -2,16 +2,14 @@
 <html lang="en">
   <head>
     <title>cricket</title>
-    <style>
-      body {
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="cricket.css" />
   </head>
   <body>
     <div>
       <h1>Bat Ball Stump Game</h1>
+
       <button
+        class="c-bb"
         onclick="  
        let compt = generateRandom();
       
@@ -19,9 +17,10 @@
       showresult('Bat', compt, resultMsg);
       "
       >
-        Bat
+        <img src="images/bat.png" alt="Bat Image" class="c-button" />
       </button>
       <button
+        class="c-bb"
         onclick=" 
       compt = generateRandom();
      resultMsg=getresult('Ball', compt);
@@ -29,16 +28,27 @@
       
       "
       >
-        Ball
+        <img src="images/ball.png" alt="Ball Image" class="c-button" />
       </button>
       <button
+        class="c-bb"
         onclick="
      compt = generateRandom();  
      resultMsg=getresult('Stump', compt);
      showresult('Stump', compt, resultMsg);
       "
       >
-        Stump
+        <img src="images/stump.png" alt="Stump Image" class="c-button" />
+      </button>
+      <h3 id="user-move"></h3>
+      <h3 id="computer-move"></h3>
+      <h3 id="result"></h3>
+      <h3 id="score"></h3>
+      <button
+        onclick="localStorage.clear()
+      resetscore()"
+      >
+        Reset
       </button>
     </div>
     <script src="script.js"></script>

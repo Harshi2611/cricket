@@ -1,0 +1,17 @@
+body {
+  text-align: center;
+}
+
+.c-bb {
+  height: 100px;
+  width: 100px;
+  border: none;
+  margin: 10px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.c-button {
+  height: 75px;
+}
